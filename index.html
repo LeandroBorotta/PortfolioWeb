@@ -10,13 +10,21 @@
   <link rel="shortcut icon" href="./assets/images/logo.ico" type="image/x-icon">
 
   <link rel="stylesheet" href="./assets/css/style.css">
-
+  <link rel="stylesheet" href="./assets/css/email.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+
+  <div class="alert alert-success" id="alertSuccess">
+    <p>Sucesso</p>
+  </div>
+
+  <div class="alert alert-error" id="alertError">
+    <p>Erro</p>
+  </div>
 
   <main>
 
@@ -720,15 +728,18 @@
 
           <h3 class="h3 form-title">Formulário de contato</h3>
 
-          <form action="" method="post" class="form" data-form>
+          <form onsubmit="enviarFormulario(event)" method="post" class="form" data-form>
 
             <div class="input-wrapper">
-              <input type="text" name="fullname" class="form-input" placeholder="Nome completo" required data-form-input>
+              <input type="text" id="nome" name="nome" class="form-input" placeholder="Nome completo" required
+                data-form-input>
 
-              <input type="email" name="email" class="form-input" placeholder="Email" required data-form-input>
+              <input type="email" id="email" name="email" class="form-input" placeholder="Email" required
+                data-form-input>
             </div>
 
-            <textarea name="message" class="form-input" placeholder="Sua mensagem" required data-form-input></textarea>
+            <textarea name="mensagem" id="mensagem" class="form-input" placeholder="Sua mensagem" required
+              data-form-input></textarea>
 
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
@@ -745,19 +756,10 @@
 
   </main>
 
-
-
-
-
-
-  <!--
-    - custom js link
-  -->
+  <script src="./assets/js/email.js"></script>
   <script src="./assets/js/script.js"></script>
 
-  <!--
-    - ionicon link
-  -->
+
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
